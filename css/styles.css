@@ -12,13 +12,13 @@ body {
     --background-dark:#2F303A;
     --background-light:#F5F4FA;
     --header-border:#ECECEC;
-    --img-shadow-first: #0000001F;
-    --img-shadow-second: #00000024;
-    --img-shadow-third: #00000033;
-    --button-shadow-hover-first: #0000001a;
+    --img-shadow-first: #0000001F; /* 0.12 opacity */
+    --img-shadow-second: #00000024; /* 0.14 opacity */
+    --img-shadow-third: #00000033; /* 0.2 opacity */
+    --button-shadow-hover-first: #0000001a; /* 0.1 opacity */
     --button-shadow-hover-second: #00000014;
     --grid-shadow-second: #0000000f;
-    --grid-shadow-third: #00000029;
+    --grid-shadow-third: #00000029; /* 0.16 opacity */
     --grid-border: #eee;
     --overlay:#2F303A66;
     --icon-color: #AFB1B8;
@@ -350,4 +350,45 @@ ul[class="img-grid"]>li:hover{
     cursor: pointer;
     
 }
- 
+
+.test {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--overlay);
+    display: flex;
+
+}
+
+.modal{
+    position: absolute;
+    width: 528px;
+    height: 581px;
+    left: 536px;
+    top: 221px;
+    background: var(--white-tekst);
+    box-shadow: 0px 1px 3px var(--img-shadow-first), 0px 1px 1px var(--img-shadow-second), 0px 2px 1px var(--img-shadow-third);
+    border-radius: 4px;  
+    position:absolute;
+}
+
+.is-hidden{
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0.5;
+    transform: rotate(45deg);
+
+}
+
+.close{
+    all:unset;
+    margin:8px 0 0 490px;
+}
+
+.close:hover{
+    background:none;
+    box-shadow: none;
+    cursor: pointer;
+}
