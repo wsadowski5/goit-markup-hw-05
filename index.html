@@ -19,19 +19,19 @@
       <nav class="navigation">
         <ul class="nav-manu-first">
           <li class="webstudio-style"><a href="./index.html" ><span class="web-color">Web</span>Studio</a></li>
-          <li class="agencja-pad"><a href="#">Agencja</a></li>
+          <li class="agencja-pad"><a class="is-active" href="./index.html">Agencja</a></li>
           <li class="portfolio-kontakt-pad"><a href="./portfolio.html">Portfolio</a></li>
           <li class="portfolio-kontakt-pad"><a href="#">Kontakt</a></li>
         </ul>  
         <ul class="nav-manu-second">
           <li>
-            <a href="mailto:info@devstudio.com"> <svg class="icon-nav" width="16px" height="12px">
+            <a class="icon-align" href="mailto:info@devstudio.com"> <svg class="icon-nav" width="16px" height="12px">
               <use href="./images/icons.svg#icon-envelope"></use>
 
             </svg> info@devstudio.com </a>
           </li>
           <li>
-            <a href="tel:+48111111111">  <svg class="icon-nav" width="10px" height="16px">
+            <a class="icon-align" href="tel:+48111111111">  <svg class="icon-nav" width="10px" height="16px">
               <use href="./images/icons.svg#icon-smartphone"></use>
             </svg> 
              +48 111 111 111
@@ -83,9 +83,9 @@
     </ul>
     <h2>Czym się zajmujemy</h2>
     <ul class="img-display">
-      <li><img src="./images/keyboard.jpg" alt="hands on keyboard" width="370" height="294"></li>
-      <li><img src="./images/laptop_and_mobile_phone.jpg" alt="mobile phone in hand and second hand on laptop" width="370" height="294"></li>
-      <li><img src="./images/tablet.jpg" alt="tablet in hand" width="370" height="294"></li>
+      <li class="img-list"><p class="img-description">aplikacje komputerowe</p><img src="./images/keyboard.jpg" alt="hands on keyboard" width="370" height="294"> </li>
+      <li class="img-list"><p class="img-description">aplikacje mobilne</p><img src="./images/laptop_and_mobile_phone.jpg" alt="mobile phone in hand and second hand on laptop" width="370" height="294"></li>
+      <li class="img-list"><p class="img-description">rozwiązania graficzne</p><img src="./images/tablet.jpg" alt="tablet in hand" width="370" height="294"></li>
     </ul>
     </div>
   </section>
@@ -243,7 +243,7 @@
    </div>
   </footer>
 
-<div class="test is-hidden" data-modal>
+<div class="backdrop is-hidden" data-modal>
   <div class="modal">
     <button class="close" data-modal-close>
       <svg width="30" height="30"><use href="./images/icons.svg#icon-close"></use></svg>

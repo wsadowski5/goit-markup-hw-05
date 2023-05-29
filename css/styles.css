@@ -23,6 +23,10 @@ body {
     --overlay:#2F303A66;
     --icon-color: #AFB1B8;
     --icon-color-footer: #ffffff1a;
+    --overlay-what-we-do: rgba(47, 48, 58, 0.8);
+    --default-time: 250ms;
+    --default-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --img-overlay-portfolio: rgba(33, 150, 243, 0.9);  
 }
 
 .container {
@@ -77,12 +81,16 @@ a{
 a:hover, a:focus, .web-color {
     color: var(--brand-color-blue);
     fill: var(--brand-color-blue);
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function);
 }
 
 button:focus, button:hover {
     background-color: var(--brand-color-blue);
     color: var(--white-tekst);
     box-shadow: 0px 3px 1px var(--button-shadow-hover-first), 0px 1px 2px var(--button-shadow-hover-second), 0px 2px 2px var(--img-shadow-first);
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function);
 }
 
 .icon-nav{
@@ -188,6 +196,21 @@ header{
     gap: 50px;
 }
 
+.is-active{
+    position: relative;
+    display:flex;
+    color: var(--brand-color-blue);
+}
+.is-active::after{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: var(--brand-color-blue);
+    position: absolute;
+    top: 44px;
+    border-radius: 2px;
+}
+
 .agencja-pad{
     padding-left: 93px;
 }
@@ -240,7 +263,9 @@ header{
 .icon-round:hover, icon-round:focus{
     cursor: pointer;
     background-color: var(--brand-color-blue);
-    fill: var(--white-tekst)
+    fill: var(--white-tekst);
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function);
 }
 
 .clients-icons{
@@ -259,11 +284,32 @@ div[class="clients-icons"]>svg:hover, div[class="clients-icons"]>svg:focus{
     border: 1px solid var(--brand-color-blue);
     fill: var(--brand-color-blue);
     cursor: pointer;
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function);
 }
 
 .img-display{
     display: flex;
     justify-content: space-between;
+}
+
+.img-list {
+    position: relative;
+}
+
+.img-description{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-tekst);
+    background-color: var(--overlay-what-we-do);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 ul[class="img-display"]>li{
@@ -297,6 +343,8 @@ ul[class="img-display"]>li{
 ul[class="img-grid"]>li:hover{
     cursor: pointer;
     box-shadow: 0px 1px 1px var(--img-shadow-first), 0px 4px 4px var(--grid-shadow-second), 1px 4px 6px var(--grid-shadow-third);
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function);
 }
 
 .grid-border{
@@ -305,6 +353,7 @@ ul[class="img-grid"]>li:hover{
 }
 
 .grid-header{
+
     font-weight: 700;
     letter-spacing: 0.06em;
     padding: 20px 0 4px 24px;
@@ -314,7 +363,32 @@ ul[class="img-grid"]>li:hover{
 .grid-caption{
     line-height: 1.875em;
     padding: 0 0 20px 24px;
-    color:var(--brand-color-grey)
+    color:var(--brand-color-grey);
+}
+
+.img-box{
+    position: relative;
+    overflow: hidden;
+
+}
+.img-box:hover .grid-overlay{
+    transform: translateY(0)
+}
+
+.grid-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    line-height: 1.56;
+    color: var(--white-tekst);
+    background-color:var(--img-overlay-portfolio);
+    width: 100%;
+    height: 100%;
+    padding: 49px 45px 49px 24px;
+    transform: translateY(100%);
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function); 
 }
 
 .footer-flex{
@@ -348,38 +422,40 @@ ul[class="img-grid"]>li:hover{
 .footer-round:hover, .footer-round:focus{
     background-color: var(--brand-color-blue);
     cursor: pointer;
-    
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function);  
 }
 
-.test {
-    position: absolute;
+.backdrop {
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: var(--overlay);
+    background-color: var(--img-shadow-third);
     display: flex;
 
 }
 
 .modal{
-    position: absolute;
+    position: fixed;
     width: 528px;
     height: 581px;
-    left: 536px;
-    top: 221px;
-    background: var(--white-tekst);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    background-color: var(--white-tekst);
     box-shadow: 0px 1px 3px var(--img-shadow-first), 0px 1px 1px var(--img-shadow-second), 0px 2px 1px var(--img-shadow-third);
     border-radius: 4px;  
-    position:absolute;
+
 }
+
+
 
 .is-hidden{
     pointer-events: none;
     visibility: hidden;
-    opacity: 0.5;
-    transform: rotate(45deg);
-
+    opacity: 1.0;
 }
 
 .close{
@@ -391,4 +467,9 @@ ul[class="img-grid"]>li:hover{
     background:none;
     box-shadow: none;
     cursor: pointer;
+}
+
+.icon-align{
+    display: flex;
+    align-items: center;
 }
