@@ -81,6 +81,7 @@ a{
 a:hover, a:focus, .web-color {
     color: var(--brand-color-blue);
     fill: var(--brand-color-blue);
+    transition-property: color, fill; 
     transition-duration: var(--default-time);
     transition-timing-function: var(--default-timing-function);
 }
@@ -89,6 +90,7 @@ button:focus, button:hover {
     background-color: var(--brand-color-blue);
     color: var(--white-tekst);
     box-shadow: 0px 3px 1px var(--button-shadow-hover-first), 0px 1px 2px var(--button-shadow-hover-second), 0px 2px 2px var(--img-shadow-first);
+    transition-property: color, background-color, box-shadow;
     transition-duration: var(--default-time);
     transition-timing-function: var(--default-timing-function);
 }
@@ -264,6 +266,7 @@ header{
     cursor: pointer;
     background-color: var(--brand-color-blue);
     fill: var(--white-tekst);
+    transition-property: fill, background-color;
     transition-duration: var(--default-time);
     transition-timing-function: var(--default-timing-function);
 }
@@ -284,6 +287,7 @@ div[class="clients-icons"]>svg:hover, div[class="clients-icons"]>svg:focus{
     border: 1px solid var(--brand-color-blue);
     fill: var(--brand-color-blue);
     cursor: pointer;
+    transition-property: fill, border;
     transition-duration: var(--default-time);
     transition-timing-function: var(--default-timing-function);
 }
@@ -343,6 +347,7 @@ ul[class="img-display"]>li{
 ul[class="img-grid"]>li:hover{
     cursor: pointer;
     box-shadow: 0px 1px 1px var(--img-shadow-first), 0px 4px 4px var(--grid-shadow-second), 1px 4px 6px var(--grid-shadow-third);
+    transition-property: box-shadow;
     transition-duration: var(--default-time);
     transition-timing-function: var(--default-timing-function);
 }
@@ -369,11 +374,11 @@ ul[class="img-grid"]>li:hover{
 .img-box{
     position: relative;
     overflow: hidden;
+}
 
-}
-.img-box:hover .grid-overlay{
+.card-overlay:hover .grid-overlay{
     transform: translateY(0)
-}
+}    
 
 .grid-overlay{
     position: absolute;
@@ -387,8 +392,10 @@ ul[class="img-grid"]>li:hover{
     height: 100%;
     padding: 49px 45px 49px 24px;
     transform: translateY(100%);
+    transition-property: transform;
     transition-duration: var(--default-time);
     transition-timing-function: var(--default-timing-function); 
+
 }
 
 .footer-flex{
@@ -422,6 +429,7 @@ ul[class="img-grid"]>li:hover{
 .footer-round:hover, .footer-round:focus{
     background-color: var(--brand-color-blue);
     cursor: pointer;
+    transition-property: background-color;
     transition-duration: var(--default-time);
     transition-timing-function: var(--default-timing-function);  
 }
